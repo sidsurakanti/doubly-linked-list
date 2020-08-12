@@ -38,12 +38,14 @@ class LinkedList:
 
     # returns the data of the node at (param:index)
     def get(self, index=0):
-        count = 0
-        current = self.head
-        while count != index:
-            current = current.next
-            count += 1
-        return current.next.data
+        if self.size >= index >= 0:
+            count = 0
+            current = self.head
+            while count != index:
+                current = current.next
+                count += 1
+            return current.next.data
+        else: IndexError
     
 
     # deletes the node at (param:index)
@@ -84,12 +86,15 @@ class LinkedList:
         current.next.data = data
     
 
+
+
     # deletes the item at (param:index) and returns it
     def pop(self, index=0):
         popped_node = self.get(index)
         self.delete(index)
         return popped_node
     
+
 
     # allows the use of [] to get the item at (param:index) instead of using (method:self.get())
     def __getitem__(self, index=0):
@@ -99,4 +104,32 @@ class LinkedList:
     # allows you to use the len() function to find the length of the linked list
     def __len__(self):
         return self.length()
+
+    # checks if (param:self) and (param:value) are the same
+    def __eq__(self, value):
+        if self == value:
+            return True
+        else:
+            return False
     
+
+    # checks if (param:self) is greater than or equal to (param:value)
+    def __ge__(self, value):
+        return True if self >= value else False
+    # checks if (param:self) is greater than (param:value)
+    def __gt__(self, value):
+        return True if self > value else False
+
+    # checks if (param:self) is less than or equal to (param:value)
+    def __le__(self, value):
+        return True if self <= value else False
+
+
+    # checks if (param:self) is less than or equal to (param:value)
+    def __lt__(self, value):
+        return True if self < value else False
+
+ll = LinkedList()
+ll.append(2)
+ll.append(3)
+print(ll[0] < ll[1])
