@@ -1,2 +1,2 @@
-# doubly-linked-list
-a doubly-linked list
+## Description
+The doubly linked list data structure.
