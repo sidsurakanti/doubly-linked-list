@@ -1,3 +1,1 @@
-## Description
-The doubly linked list data structure.
-
+A basic doubly linked list
