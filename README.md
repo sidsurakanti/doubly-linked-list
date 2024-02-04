@@ -1,4 +1,5 @@
-A basic doubly linked list
+## Description
+A doubly linked list.
 
 #### Functionality
 - [x] `.append()`
